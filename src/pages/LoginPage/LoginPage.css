@@ -1,0 +1,95 @@
+.container{
+    height: 100%;
+    background-color: #C8B3A0;
+}
+
+.welcome{
+    color: #582C45;
+    text-align: center;
+    font-size: 48px;
+    margin: 30px;
+}
+
+.sectionGeneral{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: azul;
+    background-image: url("../../imagesApp/;esaComidaVenezolana.png  ");
+    width: 100%;
+    height: 610px;
+}
+
+.form{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    padding: 24px 36px;
+    background: linear-gradient(180deg, rgba(200, 179, 160, 0.9) 0%, rgba(166, 138, 145, 0.9) 100%);
+    border-radius: 20px;
+}
+
+.selectUsuario{
+    text-align: center;
+    font-size: 36px;
+    color: #582C45;
+    
+}
+
+.btnAcceder{
+    width: 150px;
+    height: 60px;
+    background: #62997C;
+    border-radius: 15px;
+    border: 1px solid #62997A;
+    font-size: 25px;
+    color: #F2EDE4;
+    margin: 20px;
+
+ 
+}
+
+.inputName{
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 18px;
+    border: none;
+    height: 40px;
+    width: 60%;
+}
+.inputName::placeholder{
+    color: #996E7D;
+    font-size: 20px;
+}
+    
+.inputPassword{
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 18px;
+    border: none;
+    height: 40px;
+    width: 60%;
+}
+.inputPassword::placeholder{
+    color: #996E7D;
+    font-size: 20px;
+}
+
+.inputUsuario{
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 18px;
+    border: none;
+    height: 55px;
+    width: 65%;
+}
+.optionUsuario, .optionMesero{
+    color: #996E7D;
+    font-size: 20px;
+}
