@@ -1,21 +1,18 @@
-import { useState } from 'react';
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AppContext } from "../../context/AppProvider";
 
 const Home = () => {
-  const [cambur, setCambur] = useState(true);
-  console.log('🚀 ~ cambur', cambur)
+  const { email } = useContext(AppContext);
   return (
     <>
-      <main>
-        <h2>¡Bienvenid@s al Home!</h2>
-        <p>Este es nuestro home con React.</p>
-      </main>
-      <button onClick={() => setCambur(!cambur)}>{`${cambur}`}</button>
-      <nav>
-        <Link to="/about">Nuestro Proyecto</Link>
-      </nav>
+      <h1>ESTAMOS LOGGEADOS</h1>
+      <p>{email}</p>
+      <Link to="/">Volver al login</Link>
+      {/* <button onClick={() => signOutSession()}>Cerrar Sesión</button>
+      {isUserLogIn && <Navigate to="/" replace />} */}
     </>
   );
-}
+};
 
 export default Home;
