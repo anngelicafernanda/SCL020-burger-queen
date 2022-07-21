@@ -6,7 +6,7 @@ const Home = () => {
   const { email } = useContext(AppContext);
   return (
     <>
-      <h1>ESTAMOS LOGGEADOS</h1>
+      <h1>INICIO DE SESIÓN EXITOSO</h1>
       <p>{email}</p>
       <Link to="/">Volver al login</Link>
       {/* <button onClick={() => signOutSession()}>Cerrar Sesión</button>
