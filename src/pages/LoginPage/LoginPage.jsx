@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { AppContext } from "../../context/AppProvider";
 import { login } from "../../firebase/auth";
+import './LoginPage.css'
 
 const LoginPage = () => {
   const {
@@ -19,32 +20,37 @@ const LoginPage = () => {
     <div className="container">
       <Header />
       <main>
-        <h2>Bienvenidos</h2>
-        <section>
+        <h2 className="welcome">Bienvenidos</h2>
+        <section className="sectionGeneral">
           <div className="form">
-            <h3>Selecciona tu usuario</h3>
+            <h3 className="selectUsuario">Selecciona tu usuario</h3>
             <select
+            className="inputUsuario"
               defaultValue={0}
               name="usuario"
               id=""
               onChange={(event) => setUserType(event.target.value)}
             >
-              <option value="0" hidden>
+              <option color="#996E7D" value="0" hidden>
                 Usuario
               </option>
-              <option value="Mesero">Mesero</option>
+              <option className="optionMesero" value="Mesero">Mesero</option>
             </select>
             <input
+              className="inputName"
+              placeholder="Email"
               value={email}
               type="email"
               onChange={(event) => setEmail(event.target.value)}
             />
             <input
+            className="inputPassword"
+             placeholder="Password"
               value={password}
               type="password"
               onChange={(event) => setPassword(event.target.value)}
             />
-            <button onClick={() => login(email, password, setIsUserLogIn)}>
+            <button className="btnAcceder" onClick={() => login(email, password, setIsUserLogIn)}>
               Ingresar
             </button>
             {isUserLogIn && <Navigate to="/home" replace />}
