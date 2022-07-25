@@ -1,5 +1,27 @@
 .header{
-    width: 834px; 
-    height: 160px;
-    background-image: url("../../imagesApp/TuRinconChevere.png ");
+    padding: 16px 32px;
+    width: 100%; 
+    background: linear-gradient(180deg, #996F7D 47.4%, rgba(88, 44, 69, 0.92) 100%);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    gap: 32px;
+}
+
+.smallLogo {
+    width: 140px;
+}
+
+.bigLogo {
+    width: 250px;
+}
+
+
+.title {
+    font-weight: normal;
+    margin: 0;
+    font-family: 'Great Vibes';
+    font-size: 72px;
 }
