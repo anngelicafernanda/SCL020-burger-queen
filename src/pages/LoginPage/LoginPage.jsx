@@ -10,12 +10,16 @@ const LoginPage = () => {
   const {
     email,
     password,
+    userType,
     setEmail,
     setPassword,
     setUserType,
     isUserLogIn,
     setIsUserLogIn,
   } = useContext(AppContext);
+
+  
+
   return (
     <div className="container">
       <Header />
@@ -25,7 +29,7 @@ const LoginPage = () => {
           <div className="form">
             <h3 className="selectUsuario">Selecciona tu usuario</h3>
             <select
-            className="inputUsuario"
+              className="input"
               defaultValue={0}
               name="usuario"
               id=""
@@ -37,14 +41,14 @@ const LoginPage = () => {
               <option className="optionMesero" value="Mesero">Mesero</option>
             </select>
             <input
-              className="inputName"
+              className="input"
               placeholder="Email"
               value={email}
               type="email"
               onChange={(event) => setEmail(event.target.value)}
             />
             <input
-            className="inputPassword"
+            className="input"
              placeholder="Password"
               value={password}
               type="password"
