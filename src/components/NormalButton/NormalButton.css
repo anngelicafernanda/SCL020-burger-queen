@@ -1,0 +1,15 @@
+.normalButton {
+   display: flex;
+   gap: 8px;
+   align-items: center;
+   background-color: #996F7D; 
+   padding: 12px 16px;
+   color: #FFFFFF;
+   font-size: 30px;
+   border-radius: 8px;
+   border: none;
+}
+
+.icon {
+    width: 30px;
+}
