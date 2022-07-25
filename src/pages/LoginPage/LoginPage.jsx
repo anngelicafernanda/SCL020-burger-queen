@@ -4,21 +4,19 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { AppContext } from "../../context/AppProvider";
 import { login } from "../../firebase/auth";
-import './LoginPage.css'
+import "./LoginPage.css";
 
 const LoginPage = () => {
   const {
     email,
     password,
-    userType,
+    // userType,
     setEmail,
     setPassword,
-    setUserType,
-    isUserLogIn,
-    setIsUserLogIn,
+    isUserLoggedIn,
+    setIsUserLoggedIn,
+    // setUserType,
   } = useContext(AppContext);
-
-  
 
   return (
     <div className="container">
@@ -27,19 +25,6 @@ const LoginPage = () => {
         <h2 className="welcome">Bienvenidos</h2>
         <section className="sectionGeneral">
           <div className="form">
-            <h3 className="selectUsuario">Selecciona tu usuario</h3>
-            <select
-              className="input"
-              defaultValue={0}
-              name="usuario"
-              id=""
-              onChange={(event) => setUserType(event.target.value)}
-            >
-              <option color="#996E7D" value="0" hidden>
-                Usuario
-              </option>
-              <option className="optionMesero" value="Mesero">Mesero</option>
-            </select>
             <input
               className="input"
               placeholder="Email"
@@ -48,16 +33,19 @@ const LoginPage = () => {
               onChange={(event) => setEmail(event.target.value)}
             />
             <input
-            className="input"
-             placeholder="Password"
+              className="input"
+              placeholder="Password"
               value={password}
               type="password"
               onChange={(event) => setPassword(event.target.value)}
             />
-            <button className="btnAcceder" onClick={() => login(email, password, setIsUserLogIn)}>
+            <button
+              className="btnAcceder"
+              onClick={() => login(email, password, setIsUserLoggedIn)}
+            >
               Ingresar
             </button>
-            {isUserLogIn && <Navigate to="/home" replace />}
+            {isUserLoggedIn && <Navigate to="/home" replace />}
           </div>
         </section>
       </main>
