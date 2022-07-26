@@ -4,7 +4,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { AppContext } from "../../context/AppProvider";
 import { login } from "../../firebase/auth";
-import './LoginPage.css'
+import "./LoginPage.css";
 
 const LoginPage = () => {
   const {
@@ -17,8 +17,6 @@ const LoginPage = () => {
     isUserLogIn,
     setIsUserLogIn,
   } = useContext(AppContext);
-
-  
 
   return (
     <div className="container">
@@ -38,7 +36,9 @@ const LoginPage = () => {
               <option color="#996E7D" value="0" hidden>
                 Usuario
               </option>
-              <option className="optionMesero" value="Mesero">Mesero</option>
+              <option className="optionMesero" value="Mesero">
+                Mesero
+              </option>
             </select>
             <input
               className="input"
@@ -48,13 +48,16 @@ const LoginPage = () => {
               onChange={(event) => setEmail(event.target.value)}
             />
             <input
-            className="input"
-             placeholder="Password"
+              className="input"
+              placeholder="Password"
               value={password}
               type="password"
               onChange={(event) => setPassword(event.target.value)}
             />
-            <button className="btnAcceder" onClick={() => login(email, password, setIsUserLogIn)}>
+            <button
+              className="btnAcceder"
+              onClick={() => login(email, password, setIsUserLogIn)}
+            >
               Ingresar
             </button>
             {isUserLogIn && <Navigate to="/home" replace />}

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useContext } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { AppContext } from "../../context/AppProvider";
@@ -103,8 +102,9 @@ const HomePage = () => {
         </section>
 
         <footer className="homePageMainFooter">
-          <NormalButton icon={NextStepImage} text="Siguiente" />
-          {<Navigate to="/order" replace />}
+          <Link to="/order">
+            <NormalButton icon={NextStepImage} text="Siguiente" />
+          </Link>
         </footer>
       </main>
 

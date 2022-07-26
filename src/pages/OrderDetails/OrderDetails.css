@@ -1,6 +1,6 @@
 .containerMain {
   padding: 0 40px;
-  min-height: 30vh;
+  min-height: 100vh;
 }
 
 .orderPage {
@@ -12,6 +12,12 @@
   position: relative;
 }
 
+.containerSelect {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
 .containerBackMesa {
   display: flex;
   justify-content: space-between;
@@ -20,6 +26,11 @@
 .containerCliente {
   display: flex;
   padding: 20px 0;
+}
+
+.containerFood {
+  width: 100%;
+  padding-bottom: 360px;
 }
 
 .containerFooterButtom {
@@ -35,13 +46,12 @@ h4,
   font-size: 25px;
 }
 
-.nameCliente {
+.inputCliente {
   width: 380px;
   height: 35px;
   border-radius: 7px;
   border: solid 1px #996e7d;
   margin-left: 15px;
-  font-size: 25px;
 }
 
 .sectionResume {
@@ -50,8 +60,3 @@ h4,
   position: fixed;
   bottom: 0;
 }
-
-/* .resumeOrderComponent {
-  max-height: 100%;
-  width: auto;
-} */
