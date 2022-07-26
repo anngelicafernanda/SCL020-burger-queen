@@ -1,0 +1,32 @@
+.containerMain {
+  padding: 0 40px;
+}
+
+.orderPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.containerSelect {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.containerBackMesa {
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerCliente {
+  display: flex;
+  padding: 20px 0;
+}
+
+.containerFood {
+  width: 100%;
+  height: 260px;
+}
