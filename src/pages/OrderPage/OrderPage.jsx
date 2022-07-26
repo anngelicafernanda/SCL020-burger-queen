@@ -13,11 +13,11 @@ const OrderPage = () => {
       <main className="containerMain">
         <div className="containerBackMesa">
           <NormalButton text="Atrás" icon={BackStepImage} />
-          <h3>Pedido Mesa 2</h3>
+          <h3 className="orderTable">Pedido Mesa 2</h3>
         </div>
         <div className="containerCliente">
           <h4>Cliente:</h4>
-          <input type="text" />
+          <input className="inputCliente" type="text" />
         </div>
         <div className="containerSelect">
           <NormalButton text="Desayuno" />
@@ -25,8 +25,16 @@ const OrderPage = () => {
           <NormalButton text="Jugos / Café / Té" />
         </div>
         <div className="containerFood">Espacio</div>
-        <ResumeOrder />
+
       </main>
+        <section className="sectionResume">
+        <ResumeOrder />
+        
+        <div className="containerFooterButtom">
+          <NormalButton text="Enviar a Cocina" />
+          <NormalButton text="Facturar" />
+        </div>
+        </section>
     </div>
   );
 };
