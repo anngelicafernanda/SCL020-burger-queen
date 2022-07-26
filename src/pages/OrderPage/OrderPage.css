@@ -1,19 +1,22 @@
 .containerMain {
   padding: 0 40px;
+  min-height: 100vh;
 }
 
 .orderPage {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   gap: 32px;
+  position: relative;
 }
 
 .containerSelect {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+  
 }
 
 .containerBackMesa {
@@ -29,4 +32,31 @@
 .containerFood {
   width: 100%;
   height: 260px;
+}
+
+.containerFooterButtom{
+  bottom: 20px;
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	height: 60px;
+}
+
+h4, .orderTable {
+  font-size: 25px;
+}
+
+.inputCliente{
+  width: 380px;
+  height: 35px;
+  border-radius: 7px;
+  border: solid 1px #996E7D;
+  margin-left: 15px;
+}
+
+.sectionResume{
+background-color: rgba(255,255,255,0.3);
+position: absolute;
+bottom: 0;
+
 }
