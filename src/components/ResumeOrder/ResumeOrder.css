@@ -1,0 +1,30 @@
+.containerOrder {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  gap: 18px;
+  padding: 48px 36px;
+  background: linear-gradient(
+    180deg,
+    rgba(200, 179, 160, 0.9) 0%,
+    rgba(166, 138, 145, 0.9) 100%
+  );
+  border-radius: 20px;
+  margin: auto;
+}
+
+.containerOrderGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr repeat(3, 1fr);
+  text-align: center;
+  gap: 16px;
+  font-size: 20px;
+}
+
+.totalContainer {
+  margin-left: auto;
+}
