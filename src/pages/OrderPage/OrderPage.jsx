@@ -1,12 +1,16 @@
+import { useState } from "react";
 import Header from "../../components/Header/Header";
 import NormalButton from "../../components/NormalButton/NormalButton";
 import BackStepImage from "../../imagesApp/flecha-izquierda-3.png";
 import ResumeOrder from "../../components/ResumeOrder/ResumeOrder";
 import "./OrderPage.css";
 import { Link } from "react-router-dom";
+import Breakfast from "../../components/Breakfast/Breakfast";
+import { breakfastMenu, lunchsMenu, drinksMenu } from "../../constants/menus";
 
 const OrderPage = () => {
   // const { isUserLogIn, setIsUserLogIn } = useContext(AppContext);
+  const [currentMenu, setCurrentMenu] = useState(breakfastMenu)
 
   return (
     <div className="orderPage">
@@ -23,47 +27,13 @@ const OrderPage = () => {
           <input className="inputCliente" type="text" />
         </div>
         <div className="containerSelect">
-          <NormalButton text="Desayuno" />
-          <NormalButton text="Almuerzo" />
-          <NormalButton text="Jugos / Café / Té" />
+          <NormalButton text="Desayuno" onClick={() => setCurrentMenu(breakfastMenu)} />
+          <NormalButton text="Almuerzo" onClick={() => setCurrentMenu(lunchsMenu)} />
+          <NormalButton text="Jugos / Café / Té" onClick={() => setCurrentMenu(drinksMenu)} />
         </div>
         <div className="containerFood">
-          <div className="containerOrderGrid">
-            <p>Pedido</p>
-            <p>Estado</p>
-            <p>Cant</p>
-            <p>Precio</p>
-            <p>Arepa asada de queso llanero</p>
-            <p>1</p>
-            <p>$5000</p>
-            <p>Arepa asada de queso llanero</p>
-            <p>1</p>
-            <p>$5000</p>
-            <p>Arepa asada de queso llanero</p>
-            <p>1</p>
-            <p>$5000</p>
-            <p>Arepa asada de queso llanero</p>
-            <p>1</p>
-            <p>$5000</p>
-            <p>Arepa asada de queso llanero</p>
-            <p>1</p>
-            <p>$5000</p>
-            <p>Arepa asada de queso llanero</p>
-            <p>1</p>
-            <p>$5000</p>
-            <p>Arepa asada de queso llanero</p>
-            <p>1</p>
-            <p>$5000</p>
-            <p>Arepa asada de queso llanero</p>
-            <p>1</p>
-            <p>$5000</p>
-            <p>Arepa asada de queso llanero</p>
-            <p>1</p>
-            <p>$5000</p>
-            <p>Arepa asada de queso llanero</p>
-            <p>1</p>
-            <p>$5000</p>
-          </div>
+        {/* COMPONENTE DE MENU */}
+        <Breakfast currentMenu={currentMenu} />
         </div>
       </main>
       <section className="sectionResume">
