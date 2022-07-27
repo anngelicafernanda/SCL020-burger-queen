@@ -1,73 +1,77 @@
-.container{
-    height: 100%;
-    background-color: #F9F7F8;
+.container {
+  height: 100%;
+  background-color: #f9f7f8;
 }
 
-.welcome{
-    font-weight: normal;
-    text-align: center;
-    font-size: 48px;
-    margin-block: 50px;
+.welcome {
+  font-weight: normal;
+  text-align: center;
+  font-size: 48px;
+  margin-block: 50px;
 }
 
-.sectionGeneral{
-    display: flex;
-    justify-content: center;
-    width: 100%;
+.sectionGeneral {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.form{
-    width: 70%;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    padding: 48px 36px;
-    background: linear-gradient(180deg, rgba(200, 179, 160, 0.9) 0%, rgba(166, 138, 145, 0.9) 100%);
-    border-radius: 20px;
+.form {
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 48px 36px;
+  background: linear-gradient(
+    180deg,
+    rgba(166, 138, 145, 0.44) 0%,
+    rgba(166, 138, 145, 0.9) 100%
+  );
+  border-radius: 20px;
 }
 
-.selectUsuario{
-    text-align: center;
-    font-size: 36px;
-    color: #582C45;
-    
+.selectUsuario {
+  text-align: center;
+  font-size: 36px;
+  color: #582c45;
 }
 
-.btnAcceder{
-    background: #FFFFFF;
-    padding: 16px 56px;
-    border-radius: 10px;
-    border: none;
-    margin-top: 16px;
-    font-size: 25px;
-    color: #000000;
+.btnAcceder {
+  background: #ffffff;
+  padding: 16px 56px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 16px;
+  font-size: 25px;
+  color: #000000;
 }
 
 .input {
-    padding: 16px 14px;
-    border-radius: 10px;
-    font-size: 18px;
-    border: none;
-    width: 75%;
+  padding: 16px 14px;
+  border-radius: 10px;
+  font-size: 18px;
+  border: none;
+  width: 75%;
 }
 
-.input::placeholder{
-    color: #000000;
-    font-size: 20px;
+.input::placeholder {
+  color: #000000;
+  font-size: 20px;
 }
-    
-.inputUsuario{
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 18px;
-    border: none;
-    height: 40px;
-    width: 60%;
+
+.inputUsuario {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+  height: 40px;
+  width: 60%;
 }
-.optionUsuario, .optionMesero{
-    color: #996E7D;
-    font-size: 20px;
+.optionUsuario,
+.optionMesero {
+  color: #996e7d;
+  font-size: 20px;
 }
