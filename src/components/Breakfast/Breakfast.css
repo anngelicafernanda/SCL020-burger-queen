@@ -1,0 +1,20 @@
+.containerOrderBreakfast {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 1fr 1.5fr;
+    text-align: center;
+    gap: 16px;
+    font-size: 20px;
+  }
+
+.containerSigns{
+display: flex;
+justify-content: space-around;
+background-color: #D3C5C9;
+border-radius: 10px;
+padding: 7px;
+}
+
+  .lessSign, .addSign{
+    width: 20px;
+  }
