@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext } from "react";
 import Header from "../../components/Header/Header";
 import NormalButton from "../../components/NormalButton/NormalButton";
 import BackStepImage from "../../imagesApp/flecha-izquierda-3.png";
@@ -6,11 +6,12 @@ import ResumeOrder from "../../components/ResumeOrder/ResumeOrder";
 import "./OrderPage.css";
 import { Link } from "react-router-dom";
 import Breakfast from "../../components/Breakfast/Breakfast";
-import { breakfastMenu, lunchsMenu, drinksMenu } from "../../constants/menus";
+import { AppContext } from "../../context/AppProvider";
+// import { breakfastMenu, lunchsMenu, drinksMenu } from "../../constants/menus";
 
 const OrderPage = () => {
-  // const { isUserLogIn, setIsUserLogIn } = useContext(AppContext);
-  const [currentMenu, setCurrentMenu] = useState(breakfastMenu)
+  const { menu, currentMenu, setCurrentMenu } = useContext(AppContext);
+  // const [currentMenu, setCurrentMenu] = useState(breakfastMenu);
 
   return (
     <div className="orderPage">
@@ -27,13 +28,22 @@ const OrderPage = () => {
           <input className="inputCliente" type="text" />
         </div>
         <div className="containerSelect">
-          <NormalButton text="Desayuno" onClick={() => setCurrentMenu(breakfastMenu)} />
-          <NormalButton text="Almuerzo" onClick={() => setCurrentMenu(lunchsMenu)} />
-          <NormalButton text="Jugos / Café / Té" onClick={() => setCurrentMenu(drinksMenu)} />
+          <NormalButton
+            text="Desayuno"
+            onClick={() => setCurrentMenu(menu.breakfast)}
+          />
+          <NormalButton
+            text="Almuerzo"
+            onClick={() => setCurrentMenu(menu.lunchs)}
+          />
+          <NormalButton
+            text="Jugos / Café / Té"
+            onClick={() => setCurrentMenu(menu.drinks)}
+          />
         </div>
         <div className="containerFood">
-        {/* COMPONENTE DE MENU */}
-        <Breakfast currentMenu={currentMenu} />
+          {/* COMPONENTE DE MENU */}
+          <Breakfast currentMenu={currentMenu} />
         </div>
       </main>
       <section className="sectionResume">
