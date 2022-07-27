@@ -8,29 +8,27 @@ import ResumeOrder from "../../components/ResumeOrder/ResumeOrder";
 
 const OrderDetails = ({ text, icon }) => {
   return (
-    <div className="orderPage">
+    <div className="orderDetails">
       <Header />
-      <main className="containerMain">
-        <div className="containerBackMesa">
+      <main className="containerMainDetails">
+        <div className="containerBackMesaDetails">
           <Link to="/order">
             <NormalButton text="Atrás" icon={BackStepImage} />
           </Link>
-          <h3 className="orderTable">Pedido Mesa 2</h3>
+          <h3 className="orderTableDetails">Pedido Mesa 2</h3>
         </div>
-        <div className="containerCliente">
+        <div className="containerClienteDetails">
           <h4>Cliente:</h4>
-          <p className="nameCliente" type="text">
+          <p className="nameClienteDetails" type="text">
             Carolina Colmenares
           </p>
         </div>
+        <ResumeOrder mainClass={"resumeOrderDetails"} />
       </main>
-      <section className="sectionResume">
-        <ResumeOrder className="resumeOrderComponent" />
-        <div className="containerFooterButtom">
-          <NormalButton text="Pagado" />
-          <NormalButton text="Liberar Mesa" />
-        </div>
-      </section>
+      <div className="containerButtomDetails">
+        <NormalButton text="Pagado" />
+        <NormalButton text="Liberar Mesa" />
+      </div>
     </div>
   );
 };
