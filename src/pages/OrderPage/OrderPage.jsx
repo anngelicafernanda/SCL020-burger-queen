@@ -10,8 +10,18 @@ import { AppContext } from "../../context/AppProvider";
 // import { breakfastMenu, lunchsMenu, drinksMenu } from "../../constants/menus";
 
 const OrderPage = () => {
-  const { menu, currentMenu, setCurrentMenu } = useContext(AppContext);
+  const {
+    menu,
+    currentMenu,
+    setCurrentMenu,
+    tablesInfo,
+    currentTable,
+    setTablesInfo,
+  } = useContext(AppContext);
   // const [currentMenu, setCurrentMenu] = useState(breakfastMenu);
+  const currentTableInfo = tablesInfo?.find(
+    (table) => table.id === currentTable
+  );
 
   return (
     <div className="orderPage">
@@ -21,7 +31,7 @@ const OrderPage = () => {
           <Link to="/home">
             <NormalButton text="Atrás" icon={BackStepImage} />
           </Link>
-          <h3 className="orderTable">Pedido Mesa 2</h3>
+          <h3 className="orderTable">Pedido: {currentTableInfo.name}</h3>
         </div>
         <div className="containerCliente">
           <h4>Cliente:</h4>
@@ -43,11 +53,18 @@ const OrderPage = () => {
         </div>
         <div className="containerFood">
           {/* COMPONENTE DE MENU */}
-          <Breakfast currentMenu={currentMenu} />
+          <Breakfast
+            order={currentTableInfo.order}
+            currentMenu={currentMenu}
+            setTablesInfo={setTablesInfo}
+            tableId={currentTable}
+          />
         </div>
       </main>
       <section className="sectionResume">
-        <ResumeOrder />
+        {/* RECIBE PROP! */}
+        <ResumeOrder order={currentTableInfo.order} />
+
         <div className="containerFooterButtom">
           <NormalButton text="Enviar a Cocina" />
           <NormalButton text="Facturar" />

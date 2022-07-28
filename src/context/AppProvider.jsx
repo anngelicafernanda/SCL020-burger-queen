@@ -6,7 +6,8 @@ const AppProvider = ({ children }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("");
-  const [isUserLogIn, setIsUserLogIn] = useState(false);
+  const [isUserLogIn, setIsUserLogIn] = useState(true);
+  const [currentMenu, setCurrentMenu] = useState([]);
   const [menu, setMenu] = useState({
     breakfast: [
       {
@@ -18,7 +19,7 @@ const AppProvider = ({ children }) => {
         price: 5000,
       },
       {
-        name: "Reina Pepiada: Arepa asada rellena con Pollo, Palta, Cilantro, Especias y Mayonesa ",
+        name: "Reina Pepiada: Arepa asada rellena con Pollo, Palta y Mayonesa ",
         price: 5000,
       },
       {
@@ -87,7 +88,54 @@ const AppProvider = ({ children }) => {
       },
     ],
   });
-  const [currentMenu, setCurrentMenu] = useState([]);
+
+  const [currentTable, setCurrentTable] = useState(null);
+  const [tablesInfo, setTablesInfo] = useState([
+    {
+      id: "1",
+      name: "Mesa 1",
+      status: "orderSent",
+      order: [],
+      client: "",
+    },
+    {
+      id: "2",
+      name: "Mesa 2",
+      status: "orderSent",
+      order: [],
+      client: "",
+    },
+    {
+      id: "3",
+      name: "Mesa 3",
+      status: "ready",
+      order: [],
+      client: "",
+    },
+    {
+      id: "4",
+      name: "Mesa 4",
+      status: "eating",
+      order: [],
+      client: "",
+    },
+    {
+      id: "5",
+      name: "Mesa 5",
+      status: "available",
+      order: [],
+      client: "",
+    },
+    {
+      id: "6",
+      name: "Mesa 6",
+      status: "available",
+      order: [],
+      client: "",
+    },
+  ]);
+
+  console.log(tablesInfo);
 
   return (
     <AppContext.Provider
@@ -98,12 +146,16 @@ const AppProvider = ({ children }) => {
         isUserLogIn,
         menu,
         currentMenu,
+        tablesInfo,
+        currentTable,
         setEmail,
         setPassword,
         setUserType,
         setIsUserLogIn,
         setMenu,
         setCurrentMenu,
+        setTablesInfo,
+        setCurrentTable,
       }}
     >
       {children}

@@ -24,41 +24,14 @@ const mapStatusToImage = (status) => {
   return imageMap[status];
 };
 
-const MESAS_INFO = [
-  {
-    id: "1",
-    name: "Mesa 1",
-    status: "orderSent",
-  },
-  {
-    id: "2",
-    name: "Mesa 2",
-    status: "preparing",
-  },
-  {
-    id: "3",
-    name: "Mesa 3",
-    status: "ready",
-  },
-  {
-    id: "4",
-    name: "Mesa 4",
-    status: "eating",
-  },
-  {
-    id: "5",
-    name: "Mesa 5",
-    status: "available",
-  },
-  {
-    id: "6",
-    name: "Mesa 6",
-    status: "available",
-  },
-];
-
 const HomePage = () => {
-  const { isUserLogIn, setIsUserLogIn } = useContext(AppContext);
+  const {
+    isUserLogIn,
+    setIsUserLogIn,
+    tablesInfo,
+    currentTable,
+    setCurrentTable,
+  } = useContext(AppContext);
 
   return (
     <div className="homePage">
@@ -84,21 +57,27 @@ const HomePage = () => {
 
         {/* MESAS GRID */}
         <section className="homePageMainTablesGrid">
-          {MESAS_INFO.map((mesa) => (
-            <div className="homePageMainTable" key={mesa.id}>
-              <header className="homePageMainTableHeader">{mesa.name}</header>
+          {/* TABLE CARD */}
+          {tablesInfo.map((table) => (
+            <div
+              className="homePageMainTable"
+              key={table.id}
+              onClick={() => setCurrentTable(table.id)}
+            >
+              <header className="homePageMainTableHeader">{table.name}</header>
 
-              {mesa.status !== "available" && (
+              {table.status !== "available" && (
                 <div className="homePageMainTableImageContainer">
                   <img
                     className="tableStatusImage"
-                    src={mapStatusToImage(mesa.status)}
+                    src={mapStatusToImage(table.status)}
                     alt="status table"
                   />
                 </div>
               )}
             </div>
           ))}
+          {/* --------------  */}
         </section>
 
         <footer className="homePageMainFooter">
