@@ -1,0 +1,52 @@
+.orderDetails {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+}
+
+.containerMainDetails {
+  padding: 0 40px;
+  min-height: 30vh;
+}
+
+.containerBackMesaDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerClienteDetails {
+  display: flex;
+  padding: 20px 0;
+}
+
+.containerButtomDetails {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  margin-bottom: 20px;
+}
+
+h4,
+.orderTableDetails {
+  font-size: 25px;
+}
+
+.nameClienteDetails {
+  width: 380px;
+  height: 35px;
+  border-radius: 7px;
+  border: solid 1px #996e7d;
+  margin-left: 15px;
+  font-size: 25px;
+  padding: 2px;
+  text-align: center;
+}
+
+.resumeOrderDetails {
+  max-height: 550px;
+  margin: 0 0 20px 0;
+}
