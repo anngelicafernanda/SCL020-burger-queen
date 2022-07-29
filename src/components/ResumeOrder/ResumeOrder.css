@@ -1,0 +1,42 @@
+.containerOrder {
+  width: auto;
+  max-height: 230px;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(166, 138, 145, 0.44) 0%,
+    rgba(166, 138, 145, 1) 100%
+  );
+  border-radius: 20px;
+  margin: 0 40px 20px 40px;
+  overflow: scroll;
+}
+
+.containerOrderGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto repeat(3, 90px);
+  text-align: center;
+  gap: 16px;
+  font-size: 20px;
+}
+
+.totalContainer {
+  margin-left: auto;
+}
+
+.resumeTitle {
+  font-weight: bold;
+}
+
+.itemDescription {
+  text-align: left;
+}
+
+.itemPrice {
+  text-align: right;
+}
