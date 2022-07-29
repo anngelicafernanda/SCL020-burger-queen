@@ -1,10 +1,15 @@
-import React from "react";
+import { useContext } from "react";
 import "./ResumeOrder.css";
+import { AppContext } from "../../context/AppProvider";
 import { Link } from "react-router-dom";
 
-const ResumeOrder = (props) => {
+const ResumeOrder = ({ mainClass }) => {
+  const { tablesInfo, currentTable } = useContext(AppContext);
+  const order = tablesInfo.find(
+    (currentTableState) => currentTableState.id === currentTable
+  ).order;
   return (
-    <div className={`containerOrder ${props.mainClass ? props.mainClass : ""}`}>
+    <div className={`containerOrder ${mainClass ? mainClass : ""}`}>
       <Link to="/orderdetails">
         <h3 className="resumeOrder">Resumen de Pedido</h3>
       </Link>
@@ -13,121 +18,24 @@ const ResumeOrder = (props) => {
         <p className="resumeTitle">Estado</p>
         <p className="resumeTitle">Cant</p>
         <p className="resumeTitle">Precio</p>
-        <p className="itemDescription">Arepa asada de queso llanero</p>
-        <p>
-          {props.icon && (
-            <img src={props.icon} className="icon" alt="icon button" />
-          )}
-        </p>
-        <p>1</p>
-        <p className="itemPrice">$5000</p>
-        <p className="itemDescription">Arepa asada de queso llanero</p>
-        <p>
-          {props.icon && (
-            <img src={props.icon} className="icon" alt="icon button" />
-          )}
-        </p>
-        <p>1</p>
-        <p className="itemPrice">$5000</p>
-        <p className="itemDescription">Arepa asada de queso llanero</p>
-        <p>
-          {props.icon && (
-            <img src={props.icon} className="icon" alt="icon button" />
-          )}
-        </p>
-        <p>1</p>
-        <p className="itemPrice">$5000</p>
-        <p className="itemDescription">Arepa asada de queso llanero</p>
-        <p>
-          {props.icon && (
-            <img src={props.icon} className="icon" alt="icon button" />
-          )}
-        </p>
-        <p>1</p>
-        <p className="itemPrice">$5000</p>
-        <p className="itemDescription">Arepa asada de queso llanero</p>
-        <p>
-          {props.icon && (
-            <img src={props.icon} className="icon" alt="icon button" />
-          )}
-        </p>
-        <p>1</p>
-        <p className="itemPrice">$5000</p>
-        <p className="itemDescription">Arepa asada de queso llanero</p>
-        <p>
-          {props.icon && (
-            <img src={props.icon} className="icon" alt="icon button" />
-          )}
-        </p>
-        <p>1</p>
-        <p className="itemPrice">$5000</p>
-        <p className="itemDescription">Arepa asada de queso llanero</p>
-        <p>
-          {props.icon && (
-            <img src={props.icon} className="icon" alt="icon button" />
-          )}
-        </p>
-        <p>1</p>
-        <p className="itemPrice">$5000</p>
-        <p className="itemDescription">Arepa asada de queso llanero</p>
-        <p>
-          {props.icon && (
-            <img src={props.icon} className="icon" alt="icon button" />
-          )}
-        </p>
-        <p>1</p>
-        <p className="itemPrice">$5000</p>
-        <p className="itemDescription">Arepa asada de queso llanero</p>
-        <p>
-          {props.icon && (
-            <img src={props.icon} className="icon" alt="icon button" />
-          )}
-        </p>
-        <p>1</p>
-        <p className="itemPrice">$5000</p>
-        <p className="itemDescription">Arepa asada de queso llanero</p>
-        <p>
-          {props.icon && (
-            <img src={props.icon} className="icon" alt="icon button" />
-          )}
-        </p>
-        <p>1</p>
-        <p className="itemPrice">$5000</p>
-        <p className="itemDescription">Arepa asada de queso llanero</p>
-        <p>
-          {props.icon && (
-            <img src={props.icon} className="icon" alt="icon button" />
-          )}
-        </p>
-        <p>1</p>
-        <p className="itemPrice">$5000</p>
-        <p className="itemDescription">Arepa asada de queso llanero</p>
-        <p>
-          {props.icon && (
-            <img src={props.icon} className="icon" alt="icon button" />
-          )}
-        </p>
-        <p>1</p>
-        <p className="itemPrice">$5000</p>
-        <p className="itemDescription">Arepa asada de queso llanero</p>
-        <p>
-          {props.icon && (
-            <img src={props.icon} className="icon" alt="icon button" />
-          )}
-        </p>
-        <p>1</p>
-        <p className="itemPrice">$5000</p>
-        <p className="itemDescription">Arepa asada de queso llanero</p>
-        <p>
-          {props.icon && (
-            <img src={props.icon} className="icon" alt="icon button" />
-          )}
-        </p>
-        <p>1</p>
-        <p className="itemPrice">$5000</p>
+        {order.map((currentFood) => (
+          <>
+            <p className="resumeTitle">{currentFood.name}</p>
+            <p className="resumeTitle">estado</p>
+            <p className="resumeTitle">{currentFood.amount}</p>
+            <p className="resumeTitle">{`$ ${currentFood.price}`}</p>
+          </>
+        ))}
       </div>
       <div className="totalContainer">
-        <h2>Total: $5000</h2>
+        <h2>
+          Total: ${" "}
+          {order.reduce(
+            (accumulator, currentValue) =>
+              accumulator + currentValue.price * currentValue.amount,
+            0
+          )}
+        </h2>
       </div>
     </div>
   );

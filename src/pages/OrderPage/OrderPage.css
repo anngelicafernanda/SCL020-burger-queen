@@ -59,4 +59,7 @@ h4,
 
 .containerFood {
   padding-bottom: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
