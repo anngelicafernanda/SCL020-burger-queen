@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./OrderDetails.css";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import NormalButton from "../../components/NormalButton/NormalButton";
 import BackStepImage from "../../imagesApp/flecha-izquierda-3.png";
 import ResumeOrder from "../../components/ResumeOrder/ResumeOrder";
+import { AppContext } from "../../context/AppProvider";
 
 const OrderDetails = ({ text, icon }) => {
+  const { tablesInfo, currentTable } = useContext(AppContext);
+  const clientName = tablesInfo.find(
+    (table) => table.id === currentTable
+  ).client;
+
+  const tableName = tablesInfo.find((table) => table.id === currentTable).name;
+
   return (
     <div className="orderDetails">
       <Header />
@@ -15,12 +23,12 @@ const OrderDetails = ({ text, icon }) => {
           <Link to="/order">
             <NormalButton text="Atrás" icon={BackStepImage} />
           </Link>
-          <h3 className="orderTableDetails">Pedido Mesa 2</h3>
+          <h3 className="orderTableDetails">Pedido: {tableName}</h3>
         </div>
         <div className="containerClienteDetails">
           <h4>Cliente:</h4>
           <p className="nameClienteDetails" type="text">
-            Carolina Colmenares
+            {clientName}
           </p>
         </div>
         <ResumeOrder mainClass={"resumeOrderDetails"} />

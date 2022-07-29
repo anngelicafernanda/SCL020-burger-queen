@@ -7,21 +7,29 @@ import "./OrderPage.css";
 import { Link } from "react-router-dom";
 import Breakfast from "../../components/Breakfast/Breakfast";
 import { AppContext } from "../../context/AppProvider";
-// import { breakfastMenu, lunchsMenu, drinksMenu } from "../../constants/menus";
 
 const OrderPage = () => {
   const {
     menu,
     currentMenu,
-    setCurrentMenu,
     tablesInfo,
     currentTable,
+    client,
+    setCurrentMenu,
     setTablesInfo,
+    setClient,
   } = useContext(AppContext);
-  // const [currentMenu, setCurrentMenu] = useState(breakfastMenu);
   const currentTableInfo = tablesInfo?.find(
     (table) => table.id === currentTable
   );
+  const clientName = tablesInfo.find(
+    (table) => table.id === currentTable
+  ).client;
+
+  const addClientToTable = () => {
+    tablesInfo.find((table) => table.id === currentTable).client = client;
+    setClient("");
+  };
 
   return (
     <div className="orderPage">
@@ -34,8 +42,18 @@ const OrderPage = () => {
           <h3 className="orderTable">Pedido: {currentTableInfo.name}</h3>
         </div>
         <div className="containerCliente">
-          <h4>Cliente:</h4>
-          <input className="inputCliente" type="text" />
+          <h4>Cliente: </h4>
+          {(clientName === "" && (
+            <>
+              <input
+                value={client}
+                onChange={(event) => setClient(event.target.value)}
+                className="inputCliente"
+                type="text"
+              />
+              <NormalButton text="Guardar" onClick={addClientToTable} />
+            </>
+          )) || <h4>{clientName}</h4>}
         </div>
         <div className="containerSelect">
           <NormalButton

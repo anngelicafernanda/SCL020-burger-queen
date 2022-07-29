@@ -134,9 +134,7 @@ const AppProvider = ({ children }) => {
       client: "",
     },
   ]);
-
-  console.log(tablesInfo);
-
+  const [client, setClient] = useState("");
   return (
     <AppContext.Provider
       value={{
@@ -148,6 +146,7 @@ const AppProvider = ({ children }) => {
         currentMenu,
         tablesInfo,
         currentTable,
+        client,
         setEmail,
         setPassword,
         setUserType,
@@ -156,6 +155,7 @@ const AppProvider = ({ children }) => {
         setCurrentMenu,
         setTablesInfo,
         setCurrentTable,
+        setClient,
       }}
     >
       {children}

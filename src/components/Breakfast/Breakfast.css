@@ -8,8 +8,10 @@
 }
 
 .containerSigns {
+  height: 40px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   background-color: #d3c5c9;
   border-radius: 10px;
   padding: 7px;
@@ -17,5 +19,16 @@
 
 .lessSign,
 .addSign {
-  width: 20px;
+  width: auto;
+  height: auto;
+  font-size: 40px;
+  color: #62997a;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+}
+
+.lessSign {
+  color: #592c45;
+  padding-bottom: 5px;
 }
