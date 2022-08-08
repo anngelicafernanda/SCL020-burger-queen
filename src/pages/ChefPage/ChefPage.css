@@ -1,0 +1,72 @@
+.containerOrderChef {
+  width: auto;
+  max-height: 230px;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(166, 138, 145, 0.44) 0%,
+    rgba(166, 138, 145, 1) 100%
+  );
+  border-radius: 20px;
+  margin: 0 40px 20px 40px;
+  overflow: scroll;
+}
+
+.containerOrderGridChef {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto repeat(1, 90px) auto;
+  text-align: center;
+  gap: 16px;
+  font-size: 20px;
+}
+
+.resumeTitleChef,
+.resumeOrderChef {
+  font-weight: bold;
+  color: #582c45;
+}
+
+.resumeDetailsChef {
+  color: #582c45;
+}
+
+.containerOrderChefTwo {
+  width: auto;
+  max-height: 230px;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 224, 55, 0.29) 4%,
+    rgba(255, 224, 55, 1) 100%
+  );
+  border-radius: 20px;
+  margin: 0 40px 20px 40px;
+  overflow: scroll;
+}
+
+.containerOrderChefThree {
+  width: auto;
+  max-height: 230px;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(139, 221, 175, 0.24) 4%,
+    rgba(139, 221, 175, 1) 100%
+  );
+  border-radius: 20px;
+  margin: 0 40px 20px 40px;
+  overflow: scroll;
+}
