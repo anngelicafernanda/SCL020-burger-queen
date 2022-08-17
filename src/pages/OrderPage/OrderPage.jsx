@@ -7,6 +7,7 @@ import "./OrderPage.css";
 import { Link } from "react-router-dom";
 import Breakfast from "../../components/Breakfast/Breakfast";
 import { AppContext } from "../../context/AppProvider";
+import { createOrder } from "../../firebase/orders";
 
 const OrderPage = () => {
   const {
@@ -84,7 +85,7 @@ const OrderPage = () => {
         <ResumeOrder order={currentTableInfo.order} />
 
         <div className="containerFooterButtom">
-          <NormalButton text="Enviar a Cocina" />
+          <NormalButton onClick={() => createOrder(currentTableInfo.order, currentTableInfo.id)} text="Enviar a Cocina" />
           <NormalButton text="Facturar" />
         </div>
       </section>
