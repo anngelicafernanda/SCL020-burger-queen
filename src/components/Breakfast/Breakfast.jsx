@@ -4,7 +4,6 @@ import "./Breakfast.css";
 
 const Breakfast = ({ currentMenu, tableId, order }) => {
   const { setTablesInfo, tablesInfo } = useContext(AppContext);
-  console.log("🚀 ~ tablesInfo", tablesInfo);
   // setTablesInfo
   const addFoodToOrder = (foodValue) => {
     const newTablesInfo = tablesInfo.map((table) => table);
@@ -78,3 +77,11 @@ const Breakfast = ({ currentMenu, tableId, order }) => {
 };
 
 export default Breakfast;
+
+function palindrome(str) {
+  const len = Math.floor(str.length / 2);
+  for (let i = 0; i < len; i++)
+    if (str[i] !== str[str.length - i - 1])
+      return false; 
+  return true;
+}

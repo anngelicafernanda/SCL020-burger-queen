@@ -6,7 +6,7 @@ const AppProvider = ({ children }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("");
-  const [isUserLogIn, setIsUserLogIn] = useState(true);
+  const [isUserLogIn, setIsUserLogIn] = useState(false);
   const [currentMenu, setCurrentMenu] = useState([]);
   const [menu, setMenu] = useState({
     breakfast: [

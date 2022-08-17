@@ -1,7 +1,8 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { AppContext } from "../../context/AppProvider";
 import { signOutSession } from "../../firebase/auth";
+import { getAllOrders } from "../../firebase/orders";
 import Header from "../../components/Header/Header";
 import NormalButton from "../../components/NormalButton/NormalButton";
 import OrderSentImage from "../../imagesApp/bolsa-de-la-compra-4.png";
@@ -32,6 +33,10 @@ const HomePage = () => {
     currentTable,
     setCurrentTable,
   } = useContext(AppContext);
+
+  useEffect(() => {
+    getAllOrders()
+  }, [])
 
   return (
     <div className="homePage">
